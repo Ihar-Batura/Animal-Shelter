@@ -18,7 +18,9 @@
             <p>Shelter for pets in Boston</p>
           </div>
           <button class="mobile-nav-toggle" aria-controls="navigation">
-            <span class="sr-only" aria-expanded="false">Menu</span>
+            <span class="sr-only" role="navigation" aria-expanded="false"
+              >Menu</span
+            >
           </button>
           <nav>
             <ul id="navigation" class="navigation" data-visible="false">
@@ -42,7 +44,6 @@
               </p>
               <a class="button" href="#">Make a friend</a>
             </div>
-
             <img
               class="not-only__image"
               src="./assets/images/not-only-dog-big.png"
@@ -72,6 +73,57 @@
                 to the pets and would hardly ever leave them alone.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+      <section class="friends">
+        <div class="wrapper">
+          <div class="friends-container">
+            <h3>
+              Our friends who <br />
+              are looking for a house
+            </h3>
+            <div class="friends-slider">
+              <img
+                class="arrow arrow-left"
+                src="./assets/icons/Arrow-left.svg"
+                alt="arrow left"
+              />
+              <div class="friends-slider__wrapper">
+                <div class="cards-box">
+                  <div id="card-1" class="card">
+                    <img
+                      src="./assets/images/pets-katrine.svg"
+                      alt="gray cat Katrine"
+                    />
+                    <h4>Katrine</h4>
+                    <button class="button light-button">Learn more</button>
+                  </div>
+                  <div id="card-2" class="card">
+                    <img
+                      src="./assets/images/pets-jennifer.svg"
+                      alt="milk dog Jennifer"
+                    />
+                    <h4>Jennifer</h4>
+                    <button class="button light-button">Learn more</button>
+                  </div>
+                  <div id="card-3" class="card">
+                    <img
+                      src="./assets/images/pets-woody.svg"
+                      alt="brown dog Woody"
+                    />
+                    <h4>Woody</h4>
+                    <button class="button light-button">Learn more</button>
+                  </div>
+                </div>
+              </div>
+              <img
+                class="arrow arrow-right"
+                src="./assets/icons/Arrow-right.svg"
+                alt="arrow right"
+              />
+            </div>
+            <a class="button" href="#">Get to know the rest</a>
           </div>
         </div>
       </section>
