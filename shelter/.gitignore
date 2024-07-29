@@ -1,5 +1,5 @@
 /node_modules
-/src
+# /src
 /test/js
 /test/browsertest/js
 /test/fixtures/temp-*
