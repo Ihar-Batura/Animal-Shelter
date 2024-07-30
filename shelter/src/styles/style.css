@@ -397,6 +397,18 @@ nav {
     font-size: 32px;
     line-height: 51.2px;
   }
+
+  /* Shadow */
+  #shadow-window {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 17.5vw;
+    background: var(--clr-btn-dark);
+    opacity: 0.6;
+    z-index: 5;
+  }
 }
 
 @media (width < 400px) {
@@ -426,6 +438,11 @@ nav {
   .not-only__content p {
     width: 300px;
     margin: 42px 0;
+  }
+  /* Shadow */
+  #shadow-window {
+    height: 0vh;
+    width: 0vw;
   }
 }
 
@@ -862,4 +879,8 @@ nav {
     max-width: 260px;
     margin-top: 40px;
   }
+}
+/* SCROLL */
+.unscroll {
+  overflow: hidden;
 }
