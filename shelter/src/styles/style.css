@@ -41,6 +41,7 @@ h2,
 h3,
 h4,
 h5,
+h6,
 p,
 figure,
 picture {
@@ -118,6 +119,21 @@ h4 {
   font-size: 20px;
   line-height: 22.72px;
   letter-spacing: 0.06em;
+}
+
+h5 {
+  font-size: 15px;
+  line-height: 16.5px;
+  letter-spacing: 0.06em;
+  color: var(--clr-dark-h);
+}
+
+h6 {
+  font-family: var(--ff-sans-normal);
+  font-style: italic;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--clr-dark-light);
 }
 
 p {
@@ -653,5 +669,96 @@ nav {
 
   .help-card img {
     margin: 0 auto 21px;
+  }
+}
+
+/* ADDITION */
+
+.addition {
+  background-color: var(--crl-light);
+}
+
+.addition-container {
+  padding: 80px 20px 100px;
+}
+
+.addition-container__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 915px;
+  margin: 0 auto;
+}
+
+.addition__text-box {
+  max-width: 380px;
+}
+
+.addition__text-box h3 {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.addition__text-box h5 {
+  margin-bottom: 20px;
+}
+
+.addition__bank-link {
+  display: flex;
+  text-decoration: none;
+  color: var(--clr-dark-h);
+  background-color: var(--clr-gold);
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  max-width: 350px;
+  padding: 10px 15px;
+  gap: 15px;
+  border-radius: 9px;
+  margin-bottom: 20px;
+}
+
+@media (width < 931px) {
+  .addition-container__info {
+    flex-direction: column-reverse;
+  }
+  .addition__text-box {
+    margin-bottom: 60px;
+  }
+}
+
+@media (width < 450px) {
+  .addition-container {
+    padding: 39px 10px 42px;
+  }
+  .addition__bank-link {
+    max-width: 282px;
+    font-size: 15px;
+    line-height: 16.5px;
+    margin: 0 auto 20px;
+    padding-top: 14px;
+    padding-bottom: 6px;
+  }
+  .addition__text-box {
+    text-align: center;
+    margin-bottom: 43px;
+  }
+  .addition__text-box h3 {
+    max-width: 220px;
+    margin: 0 auto 20px;
+  }
+
+  .addition__text-box h5 {
+    margin: 0 auto 20px;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+  .addition__text-box h6 {
+    max-width: 280px;
+    text-align: justify;
+  }
+
+  .addition-container__info img {
+    max-width: 260px;
   }
 }
