@@ -19,3 +19,11 @@ navToggle.addEventListener('click', () => {
 
   // if the nav is open, close it
 })
+
+const links = document.querySelectorAll('ul > li')
+links.forEach((el) =>
+  el.addEventListener('click', () => {
+    nav.setAttribute('data-visible', false) // close burger
+    navToggle.setAttribute('aria-expanded', false) // change/return icon
+  })
+)

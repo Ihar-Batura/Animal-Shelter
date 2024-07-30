@@ -59,6 +59,10 @@ p {
 
 /* set up the body */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--ff-serif);
   color: var(--clr-black);
