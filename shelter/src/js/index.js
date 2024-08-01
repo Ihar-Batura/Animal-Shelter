@@ -45,3 +45,64 @@ links.forEach((el) =>
     shadow.remove() // delete shadow window
   })
 )
+
+// Реализация слайдера-карусели на странице main
+let offset = 0
+const sliderLine = document.querySelector('.slider-line')
+const btnArrowLeft = document.querySelector('.arrow-left')
+const btnArrowRight = document.querySelector('.arrow-right')
+
+let width
+
+function init() {
+  width = document.querySelector('.friends-slider__wrapper').offsetWidth //give slider width
+}
+window.addEventListener('resize', init) //check change window width
+init()
+
+let step = 0
+btnArrowLeft.addEventListener('click', () => {
+  if (width === 990) {
+    step += 360
+    if (step > 0) {
+      step = -1800
+    }
+    sliderLine.style.left = step + 'px'
+  }
+  if (width === 580) {
+    step += 310
+    if (step > 0) {
+      step = -1860
+    }
+    sliderLine.style.left = step + 'px'
+  } else {
+    step += 270
+    if (step > 0) {
+      step = -1890
+    }
+    sliderLine.style.left = step + 'px'
+  }
+})
+
+btnArrowRight.addEventListener('click', () => {
+  if (width === 990) {
+    step -= 360
+    if (step === -2160) {
+      step = 0
+    }
+    sliderLine.style.left = step + 'px'
+  }
+  if (width === 580) {
+    step -= 310
+    if (step === -2170) {
+      step = 0
+    }
+    sliderLine.style.left = step + 'px'
+  } else {
+    step -= 270
+    if (step === -2160) {
+      step = 0
+    }
+    sliderLine.style.left = step + 'px'
+  }
+})

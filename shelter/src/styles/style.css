@@ -540,13 +540,17 @@ nav {
 
 .friends-slider__wrapper {
   flex: 1;
-  max-width: 1014px;
+  max-width: 990px;
+  overflow: hidden;
 }
 
-.cards-box {
+.slider-line {
+  width: 2790px;
   display: flex;
   justify-content: space-between;
-  margin: 0 12px;
+  position: relative;
+  left: 0;
+  transition: all ease 1s;
 }
 
 .light-button {
@@ -573,6 +577,24 @@ nav {
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
+@media (width < 1180px) {
+  .slider-line {
+    width: 2440px;
+  }
+  .friends-slider__wrapper {
+    max-width: 580px;
+  }
+}
+
+@media (width < 760px) {
+  .slider-line {
+    width: 2160px;
+  }
+  .friends-slider__wrapper {
+    max-width: 270px;
+  }
+}
+
 @media (width < 1070px) {
   .friends {
     padding: 78px 30px 100px;
@@ -582,20 +604,6 @@ nav {
   .friends-slider {
     margin-bottom: 62px;
   }
-
-  #card-3 {
-    display: none;
-  }
-}
-
-@media (width < 740px) {
-  #card-2 {
-    display: none;
-  }
-
-  .cards-box {
-    justify-content: center;
-  }
 }
 
 @media (width < 450px) {
@@ -603,7 +611,7 @@ nav {
     padding: 39px 10px;
   }
   .friends-slider {
-    flex-wrap: wrap;
+    flex-direction: column;
     margin: 40px 0 44px;
   }
   .friends-slider__wrapper {
@@ -611,11 +619,11 @@ nav {
   }
   .arrow-left {
     order: 2;
-    margin: 19px 0 0 58px;
+    margin: 23px 0 0 -132px;
   }
   .arrow-right {
-    order: 3;
-    margin: 21px 58px 0 0;
+    order: 2;
+    margin: -53px -133px 0 0;
   }
 }
 
