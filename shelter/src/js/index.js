@@ -115,30 +115,43 @@ const closePopup = document.querySelector('.close-btn')
 const closeShadow = document.querySelector('.overlay')
 
 // Open popup
+let id
+
 cardBtn.forEach((el) =>
-  el.addEventListener('click', () => {
+  el.addEventListener('click', (e) => {
+    id = e.target.id //получаем номер кнопки
     popup.classList.toggle('active')
     body.classList.toggle('unscroll') // add unscroll
+
+    // делаем запрос и прокидываем номер id через который собираем карточку
+    fetch('data/data.json')
+      .then((response) => response.json())
+      .then((data) => generateModal(data, id))
   })
 )
 
 // Close popup
 closePopup.addEventListener('click', () => {
+  const childModalCard = document.querySelector('.modal-card')
+  childModalCard.remove() // delete old card
   popup.classList.toggle('active')
   body.classList.toggle('unscroll') // delete unscroll
 })
+
 closeShadow.addEventListener('click', (event) => {
-  // Проверяет на тот лия я элемент нажал!
+  // Проверяет на тот ли я элемент нажал!
   if (event.target.classList.contains('overlay')) {
+    const childModalCard = document.querySelector('.modal-card')
+    childModalCard.remove() // delete old card
     popup.classList.toggle('active')
     body.classList.toggle('unscroll') // delete unscroll
   }
 })
 
-const generateModal = (data, name = 'Sophia') => {
+//Функция отрисовки всех елементов в карточке в модальном окне
+const generateModal = (data, id) => {
   data.animalsCards.forEach((animal) => {
-    if (animal.name === name) {
-      console.log(animal)
+    if (animal.id == id) {
       const modalContainer = document.querySelector('.modal-container')
 
       const modalCard = document.createElement('div')
@@ -165,7 +178,3 @@ const generateModal = (data, name = 'Sophia') => {
     }
   })
 }
-
-fetch('data/data.json')
-  .then((response) => response.json())
-  .then((data) => generateModal(data))

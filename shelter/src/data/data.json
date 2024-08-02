@@ -1,6 +1,7 @@
 {
   "animalsCards": [
     {
+      "id": "1",
       "name": "Jennifer",
       "img": "../src/assets/images/pets-jennifer.svg",
       "type": "Dog",
@@ -12,6 +13,7 @@
       "parasites": ["none"]
     },
     {
+      "id": "2",
       "name": "Sophia",
       "img": "../src/assets/images/pets-sofia.svg",
       "type": "Dog",
@@ -23,6 +25,7 @@
       "parasites": ["none"]
     },
     {
+      "id": "3",
       "name": "Woody",
       "img": "../src/assets/images/pets-woody.svg",
       "type": "Dog",
@@ -34,6 +37,7 @@
       "parasites": ["none"]
     },
     {
+      "id": "4",
       "name": "Scarlett",
       "img": "../src/assets/images/pets-scarlet.svg",
       "type": "Dog",
@@ -45,6 +49,7 @@
       "parasites": ["none"]
     },
     {
+      "id": "5",
       "name": "Katrine",
       "img": "../src/assets/images/pets-katrine.svg",
       "type": "Cat",
@@ -56,6 +61,7 @@
       "parasites": ["none"]
     },
     {
+      "id": "6",
       "name": "Timmy",
       "img": "../src/assets/images/pets-timmy.svg",
       "type": "Cat",
@@ -67,6 +73,7 @@
       "parasites": ["none"]
     },
     {
+      "id": "7",
       "name": "Freddie",
       "img": "../src/assets/images/pets-freddie.svg",
       "type": "Cat",
@@ -78,6 +85,7 @@
       "parasites": ["none"]
     },
     {
+      "id": "8",
       "name": "Charly",
       "img": "../src/assets/images/pets-charly.svg",
       "type": "Dog",
