@@ -67,44 +67,42 @@ btnArrowLeft.addEventListener('click', () => {
     if (step > 0) {
       step = -1800
     }
-    sliderLine.style.left = step + 'px'
   }
-  if (width === 580) {
+  if (width < 990 && width > 270) {
     step += 310
     if (step > 0) {
       step = -1860
     }
-    sliderLine.style.left = step + 'px'
-  } else {
+  }
+  if (width === 270) {
     step += 270
     if (step > 0) {
       step = -1890
     }
-    sliderLine.style.left = step + 'px'
   }
+  sliderLine.style.left = step + 'px'
 })
 
 btnArrowRight.addEventListener('click', () => {
   if (width === 990) {
     step -= 360
-    if (step === -2160) {
+    if (step === -1800) {
       step = 0
     }
-    sliderLine.style.left = step + 'px'
   }
-  if (width === 580) {
+  if (width < 990 && width > 270) {
     step -= 310
     if (step === -2170) {
       step = 0
     }
-    sliderLine.style.left = step + 'px'
-  } else {
+  }
+  if (width === 270) {
     step -= 270
     if (step === -2160) {
       step = 0
     }
-    sliderLine.style.left = step + 'px'
   }
+  sliderLine.style.left = step + 'px'
 })
 
 // POPUP
@@ -115,11 +113,10 @@ const closePopup = document.querySelector('.close-btn')
 const closeShadow = document.querySelector('.overlay')
 
 // Open popup
-let id
 
 cardBtn.forEach((el) =>
   el.addEventListener('click', (e) => {
-    id = e.target.id //получаем номер кнопки
+    let id = e.target.id //получаем номер кнопки
     popup.classList.toggle('active')
     body.classList.toggle('unscroll') // add unscroll
 

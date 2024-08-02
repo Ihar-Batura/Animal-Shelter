@@ -940,7 +940,7 @@ nav {
 .modal-card {
   display: flex;
   width: 900px;
-  height: 500px;
+
   border-radius: 9px;
 
   background-color: var(--clr-white-active);
@@ -948,6 +948,11 @@ nav {
 
 .modal-card__text > * {
   color: var(--clr-black);
+}
+
+.modal-card img {
+  width: 500px;
+  height: 500px;
 }
 
 .modal-card__text {
@@ -977,16 +982,10 @@ nav {
 }
 
 @media (width < 1050px) {
-  .popup .modal-container {
-    width: 682px;
-    height: 402px;
-  }
-
-  .modal-card {
-    width: 630px;
+  .modal-card img {
+    width: 350px;
     height: 350px;
   }
-
   .modal-card__text {
     padding: 10px 8px 37px 11px;
   }
@@ -1000,23 +999,28 @@ nav {
   .modal-list > :not(*:last-child) {
     margin-bottom: 5px;
   }
-}
 
-@media (width < 730px) {
   .popup .modal-container {
-    width: 270px;
-    height: 393px;
+    width: 682px;
   }
 
   .modal-card {
-    width: 240px;
-    height: 341px;
+    width: 630px;
   }
+}
 
+@media (width < 730px) {
   .modal-card__text {
     padding: 10px;
   }
   .modal-card img {
     display: none;
+  }
+  .popup .modal-container {
+    width: 270px;
+  }
+
+  .modal-card {
+    width: 240px;
   }
 }
