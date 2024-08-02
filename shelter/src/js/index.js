@@ -134,3 +134,38 @@ closeShadow.addEventListener('click', (event) => {
     body.classList.toggle('unscroll') // delete unscroll
   }
 })
+
+const generateModal = (data, name = 'Sophia') => {
+  data.animalsCards.forEach((animal) => {
+    if (animal.name === name) {
+      console.log(animal)
+      const modalContainer = document.querySelector('.modal-container')
+
+      const modalCard = document.createElement('div')
+      modalCard.className = 'modal-card'
+      modalContainer.append(modalCard)
+
+      modalCard.innerHTML = `<img src=${animal.img} alt="animal photo">`
+
+      const modalText = document.createElement('div')
+      modalText.className = 'modal-card__text'
+      modalCard.append(modalText)
+
+      modalText.innerHTML = `
+      <h3>${animal.name}</h3> 
+      <h4>${animal.type} - ${animal.breed}</h4>
+      <h5>${animal.description}</h5>
+      <ul class ="modal-list">
+      <li><span><b>Age:</b> ${animal.age}</span></li>
+      <li><span><b>Inoculations:</b> ${animal.inoculations}</span></li>
+      <li><span><b>Diseases:</b> ${animal.diseases}</span></li>
+      <li><span><b>Parasites:</b> ${animal.parasites}</span></li>
+      </ul>
+      `
+    }
+  })
+}
+
+fetch('data/data.json')
+  .then((response) => response.json())
+  .then((data) => generateModal(data))

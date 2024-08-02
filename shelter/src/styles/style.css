@@ -927,9 +927,14 @@ nav {
   right: 0;
   top: 0;
   padding: 18px;
-  color: var(--clr-btn-dark);
   border: 2px solid var(--clr-gold);
   border-radius: 100px;
+}
+
+.popup .close-btn:hover {
+  cursor: pointer;
+  background-color: var(--clr-gold-hover);
+  border: 2px solid var(--clr-gold-hover);
 }
 
 .modal-card {
