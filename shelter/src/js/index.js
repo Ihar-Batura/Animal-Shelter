@@ -106,3 +106,31 @@ btnArrowRight.addEventListener('click', () => {
     sliderLine.style.left = step + 'px'
   }
 })
+
+// POPUP
+
+const cardBtn = document.querySelectorAll('.light-button')
+const popup = document.querySelector('.popup')
+const closePopup = document.querySelector('.close-btn')
+const closeShadow = document.querySelector('.overlay')
+
+// Open popup
+cardBtn.forEach((el) =>
+  el.addEventListener('click', () => {
+    popup.classList.toggle('active')
+    body.classList.toggle('unscroll') // add unscroll
+  })
+)
+
+// Close popup
+closePopup.addEventListener('click', () => {
+  popup.classList.toggle('active')
+  body.classList.toggle('unscroll') // delete unscroll
+})
+closeShadow.addEventListener('click', (event) => {
+  // Проверяет на тот лия я элемент нажал!
+  if (event.target.classList.contains('overlay')) {
+    popup.classList.toggle('active')
+    body.classList.toggle('unscroll') // delete unscroll
+  }
+})
