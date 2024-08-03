@@ -338,7 +338,7 @@ nav {
   .mobile-nav-toggle {
     display: block;
     position: absolute;
-    z-index: 1500;
+    z-index: 2000;
     right: 20px;
     top: 15px;
     background: transparent;
@@ -351,6 +351,7 @@ nav {
 
   .mobile-nav-toggle[aria-expanded='true'] {
     background-image: url(../assets/icons/Burger-gold-turn.svg);
+
     top: 19px;
   }
 

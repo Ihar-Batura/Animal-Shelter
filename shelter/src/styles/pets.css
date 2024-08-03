@@ -230,7 +230,7 @@ nav {
   }
 
   .mobile-nav-toggle[aria-expanded='true'] {
-    background-image: url(../assets/icons/Burger-black-turn.png);
+    background-image: url(../assets/icons/Burger.png);
     top: 19px;
   }
 
@@ -242,7 +242,7 @@ nav {
 
   .navigation {
     position: fixed;
-    background: var(--clr-btn-dark);
+    background: #5c5c5c;
     inset: -30px 0 -100vh 17%;
     z-index: 100;
     padding: 250px 0 0 0;
@@ -267,6 +267,14 @@ nav {
   .navigation a {
     font-size: 32px;
     line-height: 51.2px;
+    color: var(--clr-gray);
+  }
+
+  .navigation a:hover {
+    color: var(--clr-white-active);
+  }
+  .active > a {
+    color: var(--clr-white-active);
   }
 
   /* Shadow */
