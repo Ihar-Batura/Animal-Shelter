@@ -116,7 +116,7 @@ h3 {
   font-size: 35px;
   line-height: 45.5px;
   letter-spacing: 0.06em;
-  color: var(--clr-dark-p);
+  color: var(--clr-dark-h);
 }
 
 h4 {
@@ -956,7 +956,7 @@ nav {
 }
 
 .modal-card__text {
-  padding: 50px 20px 65px 29px;
+  padding: 50px 20px 64px 29px;
 }
 
 .modal-card__text h3 {

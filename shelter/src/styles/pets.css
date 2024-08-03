@@ -1,0 +1,306 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+  /* colors */
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+  --clr-gray: #cdcdcd;
+  --clr-white-active: #fafafa;
+  --crl-light: #f6f6f6;
+  --clr-gold: #f1cdb3;
+  --clr-gold-hover: #fddcc4;
+  --clr-dark-h: #545454;
+  --clr-dark-p: #4c4c4c;
+  --clr-btn-dark: #292929;
+  --clr-dark-light: #b2b2b2;
+
+  /* font-families */
+  --ff-serif: 'Georgia', serif;
+  --ff-sans-normal: 'Arial', sans-serif;
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+/* set up the body */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff-serif);
+  color: var(--clr-dark-h);
+  background-color: var(--clr-white);
+  min-height: 100vh;
+}
+
+.body__wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------- */
+/* Basic elements      */
+/* ------------------- */
+
+h3 {
+  font-size: 35px;
+  line-height: 45.5px;
+  letter-spacing: 0.06em;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 22.72px;
+  letter-spacing: 0.06em;
+}
+
+/* ------------------- */
+/* Components         */
+/* ------------------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.logo {
+  margin-left: 40px;
+}
+
+nav {
+  margin-right: 40px;
+  overflow-x: hidden;
+}
+
+.logo a {
+  color: var(--clr-dark-h);
+  line-height: 35.2px;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.logo p {
+  color: var(--clr-btn-dark);
+  size: 13px;
+  line-height: 14.95px;
+  letter-spacing: 0.02em;
+  margin-top: 10px;
+}
+
+.navigation {
+  display: flex;
+  list-style: none;
+}
+
+.navigation > :not(*:first-child) {
+  margin-left: 35px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: var(--clr-dark-h);
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+}
+
+.navigation a:hover {
+  color: var(--clr-btn-dark);
+}
+
+.active > a {
+  color: var(--clr-dark-h);
+  padding-bottom: 4px;
+  border-bottom: 3px solid var(--clr-gold);
+  cursor: default;
+}
+.active > a:hover {
+  color: var(--clr-dark-h);
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+@media (width < 769px) {
+  .logo {
+    margin-left: 30px;
+  }
+
+  nav {
+    margin-right: 30px;
+  }
+}
+
+@media (width < 768px) {
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 1500;
+    right: 30px;
+    top: 46px;
+    background: transparent;
+    background-image: url(../assets/icons/Burger-black.svg);
+    background-repeat: no-repeat;
+    width: 30px;
+    aspect-ratio: 1;
+    border: 0;
+  }
+
+  .mobile-nav-toggle[aria-expanded='true'] {
+    background-image: url(../assets/icons/Burger-black-turn.png);
+    top: 19px;
+  }
+
+  h2 {
+    max-width: 460px;
+    font-size: 25px;
+    line-height: 32.5px;
+  }
+
+  .navigation {
+    position: fixed;
+    background: var(--clr-btn-dark);
+    inset: -30px 0 -100vh 17%;
+    z-index: 100;
+    padding: 250px 0 0 0;
+    margin: 0;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 500ms ease-in-out;
+  }
+
+  .navigation[data-visible='true'] {
+    transform: translateX(0);
+  }
+
+  .navigation > :not(*:first-child) {
+    margin: 40px auto 0;
+  }
+
+  .navigation > :first-child {
+    margin: 0 auto;
+  }
+
+  .navigation a {
+    font-size: 32px;
+    line-height: 51.2px;
+  }
+
+  /* Shadow */
+  #shadow-window {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 17.5vw;
+    background: rgba(41, 41, 41, 0.6);
+    opacity: 0.6;
+    z-index: 5;
+  }
+}
+
+@media (width < 400px) {
+  .logo {
+    margin-left: 20px;
+  }
+
+  nav {
+    margin-right: 20px;
+  }
+  .navigation {
+    inset: -30px 0 -100vh 0;
+  }
+  .mobile-nav-toggle {
+    top: 49px;
+    right: 20px;
+  }
+
+  /* Shadow */
+  #shadow-window {
+    height: 0vh;
+    width: 0vw;
+  }
+}
