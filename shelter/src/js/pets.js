@@ -55,13 +55,23 @@ async function getData() {
   return data
 }
 
+let width
+
+function init() {
+  width = document.querySelector('.friends-container').offsetWidth //give width
+}
+window.addEventListener('resize', init) //check change window width
+init()
+
 async function main() {
   const cardsData = await getData() // получаем данные
   let currentPage = 1 // номер страницы
-  let cards = 8 // количество карточек на странице
+  let cards = width > 800 ? 8 : width < 550 ? 3 : 6 // количество карточек на странице
 
   function displayList(arrData, cardsPerPage, pageNumber) {
     const cardsContainer = document.querySelector('.friends-container')
+    cardsContainer.innerHTML = '' // при каждом запуске очищает контейнер для карточек
+    pageNumber-- // уменьшаем страницу на 1 что бы первая страница нормально отрисовывалась с 0 элемента
 
     const start = cardsPerPage * pageNumber // откуда начинать обрезать данные
     const end = start + cardsPerPage //
@@ -79,9 +89,34 @@ async function main() {
       cardsContainer.appendChild(animalCard)
     })
   }
-  function displayPagination() {}
-  function displayPaginationBtn() {}
-  displayList(cardsData.animalsCards, cards, currentPage)
+
+  const pageCount = Math.ceil(cardsData.length / cards) // количество страниц
+
+  const nextBtn = document.getElementById('next')
+  nextBtn.addEventListener('click', () => {
+    // перелистывает на новую страницу
+    if (currentPage < pageCount) {
+      currentPage++
+      displayPaginationBtn(currentPage)
+      displayList(cardsData, cards, currentPage)
+    }
+  })
+
+  const prevBtn = document.getElementById('prev')
+  prevBtn.addEventListener('click', () => {
+    // перелистывает обратно
+    if (currentPage < pageCount && currentPage !== 1) {
+      currentPage--
+      displayPaginationBtn(currentPage)
+      displayList(cardsData, cards, currentPage)
+    }
+  })
+
+  function displayPaginationBtn(page) {
+    const numberPage = document.querySelector('.pagination-number')
+    numberPage.innerText = page
+  }
+  displayList(cardsData, cards, currentPage)
 }
 
 main()

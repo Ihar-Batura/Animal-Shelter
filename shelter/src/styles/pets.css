@@ -421,6 +421,19 @@ nav {
   cursor: pointer;
 }
 
+.pagination-number {
+  font-size: 20px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  color: var(--clr-btn-dark);
+  background-color: var(--clr-gold);
+  border-radius: 50%;
+}
+
 @media (width < 500px) {
   .button-container {
     max-width: 300px;
