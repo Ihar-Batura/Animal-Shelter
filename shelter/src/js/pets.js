@@ -45,3 +45,43 @@ links.forEach((el) =>
     shadow.remove() // delete shadow window
   })
 )
+
+// Pagination
+
+async function getData() {
+  // запрос данных
+  const response = await fetch('../data/pets.json')
+  const data = await response.json()
+  return data
+}
+
+async function main() {
+  const cardsData = await getData() // получаем данные
+  let currentPage = 1 // номер страницы
+  let cards = 8 // количество карточек на странице
+
+  function displayList(arrData, cardsPerPage, pageNumber) {
+    const cardsContainer = document.querySelector('.friends-container')
+
+    const start = cardsPerPage * pageNumber // откуда начинать обрезать данные
+    const end = start + cardsPerPage //
+    const paginatedData = arrData.slice(start, end) // обрезка данных для 1 страницы
+
+    paginatedData.forEach((el) => {
+      // обработка каждого элемента и отрисовка карт
+      const animalCard = document.createElement('div')
+      animalCard.classList.add('card') // animalCard.className = 'card'
+      animalCard.innerHTML = `
+      <img src=${el.img} alt="animal picture"/>
+      <h4>${el.name}</h4>
+      <button id=${el.id} class="button light-button">Learn more</button>
+      `
+      cardsContainer.appendChild(animalCard)
+    })
+  }
+  function displayPagination() {}
+  function displayPaginationBtn() {}
+  displayList(cardsData.animalsCards, cards, currentPage)
+}
+
+main()
