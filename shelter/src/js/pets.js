@@ -97,6 +97,11 @@ async function main() {
     currentPage = 1
     displayPaginationBtn(currentPage) //изменяет цифру номера страницы пагинации
     displayList(cardsData, cards, currentPage) //отрисовывает первую страницу
+    prevBtn.classList.add('arrow__not-active')
+    startPageBtn.classList.add('arrow__not-active') // turn off button
+
+    nextBtn.classList.remove('arrow__not-active')
+    lastPageBtn.classList.remove('arrow__not-active') // turn on button
   })
 
   const lastPageBtn = document.getElementById('last-page')
@@ -104,16 +109,28 @@ async function main() {
     currentPage = pageCount
     displayPaginationBtn(currentPage) //изменяет цифру номера страницы пагинации
     displayList(cardsData, cards, pageCount) //отрисовывает последнюю страницу
+    nextBtn.classList.add('arrow__not-active')
+    lastPageBtn.classList.add('arrow__not-active') // turn off button
+
+    prevBtn.classList.remove('arrow__not-active')
+    startPageBtn.classList.remove('arrow__not-active') // turn on button
   })
 
   const nextBtn = document.getElementById('next')
   nextBtn.addEventListener('click', () => {
-    // перелистывает на новую страницу
+    // перелистывает на новую страницу вперед
     if (currentPage < pageCount) {
       currentPage++
       displayPaginationBtn(currentPage)
       displayList(cardsData, cards, currentPage)
+      if (currentPage === pageCount) {
+        // отключает кнопки на последней странице
+        nextBtn.classList.add('arrow__not-active') // turn off button
+        lastPageBtn.classList.add('arrow__not-active')
+      }
     }
+    prevBtn.classList.remove('arrow__not-active')
+    startPageBtn.classList.remove('arrow__not-active') // turn on button
   })
 
   const prevBtn = document.getElementById('prev')
@@ -124,6 +141,13 @@ async function main() {
       displayPaginationBtn(currentPage)
       displayList(cardsData, cards, currentPage)
     }
+    if (currentPage === 1) {
+      prevBtn.classList.add('arrow__not-active') // turn off button
+      startPageBtn.classList.add('arrow__not-active')
+    }
+
+    nextBtn.classList.remove('arrow__not-active')
+    lastPageBtn.classList.remove('arrow__not-active') // turn on button
   })
 
   function displayPaginationBtn(page) {

@@ -421,6 +421,12 @@ nav {
   border: 2px solid var(--clr-gray);
 }
 
+.arrow__not-active:hover {
+  background-color: transparent;
+  border: 2px solid var(--clr-gray);
+  cursor: inherit;
+}
+
 .pagination-number {
   font-size: 20px;
   line-height: 23px;
