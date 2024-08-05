@@ -92,6 +92,20 @@ async function main() {
 
   const pageCount = Math.ceil(cardsData.length / cards) // количество страниц
 
+  const startPageBtn = document.getElementById('start-page')
+  startPageBtn.addEventListener('click', () => {
+    currentPage = 1
+    displayPaginationBtn(currentPage) //изменяет цифру номера страницы пагинации
+    displayList(cardsData, cards, currentPage) //отрисовывает первую страницу
+  })
+
+  const lastPageBtn = document.getElementById('last-page')
+  lastPageBtn.addEventListener('click', () => {
+    currentPage = pageCount
+    displayPaginationBtn(currentPage) //изменяет цифру номера страницы пагинации
+    displayList(cardsData, cards, pageCount) //отрисовывает последнюю страницу
+  })
+
   const nextBtn = document.getElementById('next')
   nextBtn.addEventListener('click', () => {
     // перелистывает на новую страницу
@@ -105,7 +119,7 @@ async function main() {
   const prevBtn = document.getElementById('prev')
   prevBtn.addEventListener('click', () => {
     // перелистывает обратно
-    if (currentPage < pageCount && currentPage !== 1) {
+    if (currentPage <= pageCount && currentPage !== 1) {
       currentPage--
       displayPaginationBtn(currentPage)
       displayList(cardsData, cards, currentPage)

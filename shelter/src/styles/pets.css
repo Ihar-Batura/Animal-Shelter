@@ -411,14 +411,14 @@ nav {
   padding: 14px 19px;
 }
 
-.arrow__not-active {
-  border: 2px solid var(--clr-gray);
-}
-
 .arrow:hover {
   background-color: var(--clr-gold-hover);
   border: 2px solid var(--clr-gold-hover);
   cursor: pointer;
+}
+
+.arrow__not-active {
+  border: 2px solid var(--clr-gray);
 }
 
 .pagination-number {
