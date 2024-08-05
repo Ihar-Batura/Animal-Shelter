@@ -11,7 +11,7 @@ shadow.id = 'shadow-window'
 
 // when someone clicks the hamburger button
 navToggle.addEventListener('click', () => {
-  body.classList.add('unscroll') // add unscroll
+  body.classList.toggle('unscroll') // add unscroll
   body.append(shadow) // create shadow window
   const shadowWindow = document.getElementById('shadow-window') // when click on shadow all close
   shadowWindow.addEventListener('click', () => {
