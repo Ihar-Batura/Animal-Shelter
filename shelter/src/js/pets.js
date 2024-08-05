@@ -88,6 +88,22 @@ async function main() {
       `
       cardsContainer.appendChild(animalCard)
     })
+
+    // Открывает попап
+    //при каждой отрисовки страницы создается массив кнопок и на них вешается слушатель
+    const cardBtn = document.querySelectorAll('.light-button') // при каждой отрисовки создает новый массив
+    cardBtn.forEach((el) =>
+      el.addEventListener('click', (e) => {
+        let id = e.target.id //получаем номер кнопки
+        popup.classList.toggle('active')
+        body.classList.add('unscroll') // add unscroll
+
+        // делаем запрос и прокидываем номер id через который собираем карточку
+        fetch('../data/pets.json')
+          .then((response) => response.json())
+          .then((data) => generateModal(data, id))
+      })
+    )
   }
 
   const pageCount = Math.ceil(cardsData.length / cards) // количество страниц
@@ -155,6 +171,61 @@ async function main() {
     numberPage.innerText = page
   }
   displayList(cardsData, cards, currentPage)
+
+  // POPUP
+
+  const popup = document.querySelector('.popup')
+  const closePopup = document.querySelector('.close-btn')
+  const closeShadow = document.querySelector('.overlay')
+
+  // Close popup
+  closePopup.addEventListener('click', () => {
+    const childModalCard = document.querySelector('.modal-card')
+    childModalCard.remove() // delete old card
+    popup.classList.toggle('active')
+    body.classList.remove('unscroll') // delete unscroll
+  })
+
+  closeShadow.addEventListener('click', (event) => {
+    // Проверяет на тот ли я элемент нажал!
+    if (event.target.classList.contains('overlay')) {
+      const childModalCard = document.querySelector('.modal-card')
+      childModalCard.remove() // delete old card
+      popup.classList.toggle('active')
+      body.classList.remove('unscroll') // delete unscroll
+    }
+  })
+
+  //Функция отрисовки всех елементов в карточке в модальном окне
+  const generateModal = (data, id) => {
+    data.forEach((animal) => {
+      if (animal.id == id) {
+        const modalContainer = document.querySelector('.modal-container')
+
+        const modalCard = document.createElement('div')
+        modalCard.className = 'modal-card'
+        modalContainer.append(modalCard)
+
+        modalCard.innerHTML = `<img src=${animal.img} alt="animal photo">`
+
+        const modalText = document.createElement('div')
+        modalText.className = 'modal-card__text'
+        modalCard.append(modalText)
+
+        modalText.innerHTML = `
+      <h3>${animal.name}</h3> 
+      <h4>${animal.type} - ${animal.breed}</h4>
+      <h5>${animal.description}</h5>
+      <ul class ="modal-list">
+      <li><span><b>Age:</b> ${animal.age}</span></li>
+      <li><span><b>Inoculations:</b> ${animal.inoculations}</span></li>
+      <li><span><b>Diseases:</b> ${animal.diseases}</span></li>
+      <li><span><b>Parasites:</b> ${animal.parasites}</span></li>
+      </ul>
+      `
+      }
+    })
+  }
 }
 
 main()
