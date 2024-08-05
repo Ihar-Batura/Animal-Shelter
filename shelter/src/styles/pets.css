@@ -230,8 +230,7 @@ nav {
   }
 
   .mobile-nav-toggle[aria-expanded='true'] {
-    background-image: url(../assets/icons/Burger.png);
-    top: 19px;
+    background-image: url(../assets/icons/Burger-pets.svg);
   }
 
   .navigation {
