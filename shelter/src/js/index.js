@@ -11,13 +11,13 @@ shadow.id = 'shadow-window'
 
 // when someone clicks the hamburger button
 navToggle.addEventListener('click', () => {
-  body.classList.toggle('unscroll') // add unscroll
+  body.classList.add('unscroll') // add unscroll
   body.append(shadow) // create shadow window
   const shadowWindow = document.getElementById('shadow-window') // when click on shadow all close
   shadowWindow.addEventListener('click', () => {
     nav.setAttribute('data-visible', false) // close burger
     navToggle.setAttribute('aria-expanded', false) // change/return icon
-    body.classList.toggle('unscroll') // delete unscroll
+    body.classList.remove('unscroll') // delete unscroll
     shadow.remove() // delete shadow window
   })
 
@@ -41,7 +41,7 @@ links.forEach((el) =>
   el.addEventListener('click', () => {
     nav.setAttribute('data-visible', false) // close burger
     navToggle.setAttribute('aria-expanded', false) // change/return icon
-    body.classList.toggle('unscroll') // delete unscroll
+    body.classList.remove('unscroll') // delete unscroll
     shadow.remove() // delete shadow window
   })
 )
@@ -118,7 +118,7 @@ cardBtn.forEach((el) =>
   el.addEventListener('click', (e) => {
     let id = e.target.id //получаем номер кнопки
     popup.classList.toggle('active')
-    body.classList.toggle('unscroll') // add unscroll
+    body.classList.add('unscroll') // add unscroll
 
     // делаем запрос и прокидываем номер id через который собираем карточку
     fetch('data/data.json')
@@ -132,7 +132,7 @@ closePopup.addEventListener('click', () => {
   const childModalCard = document.querySelector('.modal-card')
   childModalCard.remove() // delete old card
   popup.classList.toggle('active')
-  body.classList.toggle('unscroll') // delete unscroll
+  body.classList.remove('unscroll') // delete unscroll
 })
 
 closeShadow.addEventListener('click', (event) => {
@@ -141,7 +141,7 @@ closeShadow.addEventListener('click', (event) => {
     const childModalCard = document.querySelector('.modal-card')
     childModalCard.remove() // delete old card
     popup.classList.toggle('active')
-    body.classList.toggle('unscroll') // delete unscroll
+    body.classList.remove('unscroll') // delete unscroll
   }
 })
 
