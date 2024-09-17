@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shelter</title>
+    <link type="image/x-icon" href="../assets/icons/favicon.svg" rel="icon" />
+    <link href="https://fonts.cdnfonts.com/css/georgia" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/pets.css" />
+    <script src="../js/pets.js" defer></script>
+  </head>
+  <body>
+    <div class="body__wrapper">
+      <header class="header">
+        <div class="wrapper header__wrapper">
+          <div class="logo">
+            <a href="../index.html"><h1>Cozy House</h1></a>
+            <p>Shelter for pets in Boston</p>
+          </div>
+          <button class="mobile-nav-toggle" aria-controls="navigation">
+            <span class="sr-only" role="navigation" aria-expanded="false"
+              >Menu</span
+            >
+          </button>
+          <nav>
+            <ul id="navigation" class="navigation" data-visible="false">
+              <li><a href="../index.html">About the shelter</a></li>
+              <li class="active"><a href="#">Our pets</a></li>
+              <li><a href="../index.html#help">Help the shelter</a></li>
+              <li><a href="#contacts">Contacts</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="friends">
+        <div class="wrapper frends__wrapper">
+          <h3>
+            Our friends who <br />
+            are looking for a house
+          </h3>
+          <div class="friends-container">
+            <!-- <div class="card">
+              <img
+                src="../assets/images/pets-katrine.svg"
+                alt="gray cat Katrine"
+              />
+              <h4>Katrine</h4>
+              <button id="5" class="button light-button">Learn more</button>
+            </div> -->
+          </div>
+          <div class="button-container">
+            <img
+              id="start-page"
+              class="arrow arrow__not-active"
+              src="../assets/icons/double-left.svg"
+              alt="to first page"
+            />
+            <img
+              id="prev"
+              class="arrow arrow-short arrow__not-active"
+              src="../assets/icons/left.svg"
+              alt="previous"
+            />
+            <div class="pagination-number">1</div>
+            <img
+              id="next"
+              class="arrow arrow-short"
+              src="../assets/icons/right.svg"
+              alt="next"
+            />
+            <img
+              id="last-page"
+              class="arrow"
+              src="../assets/icons/double-right.svg"
+              alt="to last page"
+            />
+          </div>
+        </div>
+      </section>
+      <footer id="contacts">
+        <div class="wrapper">
+          <div class="footer-container">
+            <div class="footer-info">
+              <div class="footer-text footer-text__first">
+                <h3>For questions and suggestions</h3>
+                <a
+                  href="mailto:email@shelter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="../assets/icons/icon-email.svg" alt="mail" />
+                  email@shelter.com
+                </a>
+                <a href="tel:+136745677554" target="_blank">
+                  <img src="../assets/icons/icon-phone.svg" alt="phone" />
+                  +13 674 567 75 54
+                </a>
+              </div>
+              <div class="footer-text footer-text__second">
+                <h3>We are waiting for your visit</h3>
+                <a
+                  href="https://www.google.com/maps/place/%D0%91%D0%BE%D1%81%D1%82%D0%BE%D0%BD,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F/@52.9750855,-0.0362348,15.05z/data=!4m15!1m8!3m7!1s0x47d7c2c53856f733:0x8406d541f1a0910c!2z0JHQvtGB0YLQvtC9LCDQktC10LvQuNC60L7QsdGA0LjRgtCw0L3QuNGP!3b1!8m2!3d52.97894!4d-0.026577!16zL20vMGhiZDc!3m5!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577!16zL20vMGhiZDc?entry=ttu"
+                  target="_blank"
+                >
+                  <img
+                    src="../assets/icons/icon-marker.svg"
+                    alt="position coordinates"
+                  />
+                  1 Central Street, Boston (entrance from the store)
+                </a>
+                <a
+                  href="https://www.google.com/maps/place/%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F/@51.5281798,-0.4312386,10z/data=!3m1!4b1!4m6!3m5!1s0x47d8a00baf21de75:0x52963a5addd52a99!8m2!3d51.5072178!4d-0.1275862!16zL20vMDRqcGw?entry=ttu"
+                  target="_blank"
+                >
+                  <img
+                    src="../assets/icons/icon-marker.svg"
+                    alt="position coordinates"
+                  />
+                  18 South Park, London
+                </a>
+              </div>
+              <img
+                class="footer-info__img"
+                src="../assets/images/footer-puppy.png"
+                alt="dog"
+              />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="popup">
+      <div class="overlay">
+        <div class="modal-container">
+          <img
+            class="close-btn"
+            src="../assets/icons/close-modal.svg"
+            alt="close button"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
