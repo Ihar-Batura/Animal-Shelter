@@ -1,9 +1,9 @@
 # Animal-Shelter
 
-###Task:  
+### Task:  
 
 https://github.com/rolling-scopes-school/tasks/blob/master/tasks/shelter/shelter.md  
 
-###Deploy:  
+### Deploy:  
 
 https://ihar-batura.github.io/Animal-Shelter/shelter/src/
